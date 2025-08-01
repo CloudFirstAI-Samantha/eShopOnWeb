@@ -8,7 +8,7 @@ env:
   RESOURCE-GROUP: rg-eshoponweb-eastus2
   LOCATION: eastus2
   TEMPLATE-FILE: infra/webapp.bicep
-  SUBSCRIPTION-ID: 7cf2d354-c9cb-4d66-9bf7-0b404446f370
+  SUBSCRIPTION_ID: 7cf2d354-c9cb-4d66-9bf7-0b404446f370
   WEBAPP-NAME: devops-webapp-eastus2-53482264
 
 
@@ -81,7 +81,7 @@ jobs:
     - name: deploy
       uses: azure/arm-deploy@v2
       with:
-        subscriptionId: ${{ env.SUBSCRIPTION-ID }}
+        subscriptionId: ${{ env.SUBSCRIPTION_ID }}
         resourceGroupName: ${{ env.RESOURCE-GROUP }}
         template: bicep-template/webapp.bicep
         parameters: 'webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}'
